@@ -13,3 +13,14 @@ Data: [USDA](http://catalog.data.gov/dataset/farmers-markets-geographic-data)
 6. Export api link
 7. Frame work code from cartoDB
 8. Custom SQL calls with UI
+
+http://mapschool.io/
+
+http://docs.cartodb.com/cartodb-editor.html
+
+
+Update: Export data view
+Load into drive sheets
+update sheets with new info
+Go back to cartoDB delete table
+upload table from drive
