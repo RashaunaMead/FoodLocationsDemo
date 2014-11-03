@@ -17,7 +17,6 @@ Data: [USDA](http://catalog.data.gov/dataset/farmers-markets-geographic-data)
 8. Custom SQL calls with UI
 
 
-
 http://docs.cartodb.com/cartodb-editor.html
 
 
@@ -61,5 +60,10 @@ Easy to update without code: nope
 Easy to update: should be
 Geocoding: works great with x,y coords
 
+Lat Lon finders to use with google form:
 
-http://mapschool.io/
+
+[itouch Map](http://itouchmap.com/latlong.html)
+[Whats my GPS](http://www.whatsmygps.com/)
+
+
