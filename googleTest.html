@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+      html, body, #map-canvas {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #layer_selector {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 0;
+        background-color: white;
+      }
+      #layer_selector ul {
+        padding: 0; margin: 0;
+        list-style-type: none;
+
+      }
+      #layer_selector li {
+        border-bottom: 1px solid #999;
+        padding: 15px 30px;
+        font-family: "Helvetica", Arial;
+        font-size: 13px;
+        color: #444;
+        cursor: auto;
+      }
+      #layer_selector li:hover {
+        background-color: #F0F0F0;
+        cursor: pointer;
+      }
+      #layer_selector li.selected {
+        background-color: #EEE;
+      }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQxTuGzuITxxElnRO-iG0jJGh3zpRZ6zE">
+    </script>
+    <script type="text/javascript">
+
+
+    var map, layer;
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 44.341407, lng: -89.648438},
+          zoom: 8
+        };
+         map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        layer = new google.maps.FusionTablesLayer({
+        query:{
+        select: '\'marketname\'',
+        from: '1tSGEbcidlpHLdosqOqV3FOUSkxNyHF3LaJ59WVfn',
+       // where: 'snap = \'Y\' '
+    }
+      });
+
+      layer.setMap(map);
+        $('li').click(function(){
+        console.log($(this).attr("data"));
+        var queryLi = $(this).attr("data");
+
+        layer.setOptions({
+          query: {
+            select: '\'marketname\'',
+            from:'1tSGEbcidlpHLdosqOqV3FOUSkxNyHF3LaJ59WVfn',
+            where:  queryLi
+          }
+          });
+        })
+        
+        google.maps.event.addListener(layer, 'click', function(e) {
+
+
+          e.infoWindowHtml = e.row['marketname'].value + "<br>";
+
+          if(e.row['website'].value !== 'null'){
+            e.infoWindowHtml += e.row['website'].value;
+          }
+
+          console.log("clicked");
+        });
+
+      }
+
+    
+
+      //google.maps.event.addDomListener(window, 'load', initialize);
+
+      $( document ).ready(function() {
+    google.maps.event.addDomListener(window, 'load', initialize);
+      });
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+ <div id="layer_selector" class="cartodb-infobox">
+      <ul>
+        <li data="all" class="selected">All</li>
+        <li data=" snap = 'Y' ">SNAP </li>
+        <li data=" wic = 'Y' ">WIC </li>
+        <li data=" wiccash = 'Y' ">WIC cash </li>
+
+      </ul>
+    </div>
+  </body>
+</html>
+
