@@ -30,6 +30,7 @@ Update:
 6. Restore map
 
 Update steps would not be neccesary if we were using the "john snow" plan
+* if using paid plan moderator would not need to push changes
 
 Easy to make: Very
 Easy to edit without code: Yes
@@ -46,6 +47,10 @@ Geocoding: not great
 4. get an api key
 5. insert keys into html to use table and api
 6. Custom SQL calls with UI
+
+Update:
+
+import new responses to fusion table, this must be done for map to reflect changes
 
 [API](https://developers.google.com/maps/documentation/javascript/reference)
 
