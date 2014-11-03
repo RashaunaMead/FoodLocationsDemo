@@ -6,6 +6,8 @@ Data: [USDA](http://catalog.data.gov/dataset/farmers-markets-geographic-data)
 
 ## CartoDB workflow
 
+[link to example map](http://rashaunamead.github.io/FoodLocationsDemo/cartoDBTest.html)
+
 2. Used Google sheets
 3. uploaded to cartoDB
 4. make GEOM column (find documentation)
@@ -32,8 +34,11 @@ Update steps would not be neccesary if we were using the "john snow" plan
 Easy to make: Very
 Easy to edit without code: Yes
 Easy to update: not really without paid plan
+Geocoding: not great
 
 ## Google Maps API
+
+[link to example map](http://rashaunamead.github.io/FoodLocationsDemo/googleTest.html)
 
 1. Make fusion table
 2. Georeference table
@@ -49,5 +54,7 @@ Easy to update: not really without paid plan
 Easy to make: not really
 Easy to update without code: nope
 Easy to update: should be
+Geocoding: works great with x,y coords
+
 
 http://mapschool.io/
